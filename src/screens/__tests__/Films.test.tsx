@@ -7,14 +7,17 @@ import FilmItem from "../../components/FilmItem";
 
 it('renders film items', () => {
   const push = jest.fn();
+
+  const filmItems: string[] = []; // todo model.
+
   // @ts-ignore
   // Ignoring the next line as we are not testing
   // the props but the films and search.
   const out = render(<Films navigation={{ push }} />);
 
   // todo list is displaying film items.
-  expect(out.getByType(FilmItem)).toBeTruthy();
-  expect(out.getByType(SearchBar)).toBeTruthy();
+  filmItems.map(x => expect(out.getByText(x).parent).toBeInstanceOf(FilmItem));
+  expect(out.getByPlaceholderText('Search films...')).toBeInstanceOf(SearchBar);
 });
 
 it('renders film search', () => {
