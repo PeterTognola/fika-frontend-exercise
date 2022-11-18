@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-
+import SearchBar from '../../components/SearchBar';
 import { Films } from '../Films';
-import { SearchBar, FilmItem } from '../../components';
+import FilmItem from '../../components/FilmItem';
 
 it('renders film items', () => {
   const push = jest.fn();
