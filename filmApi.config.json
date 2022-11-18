@@ -1,0 +1,17 @@
+{
+  "schemaFile": "./oas.json",
+  "apiFile": "./src/store/filmApi.ts",
+  "apiImport": "filmSplitApi",
+  "hooks": true,
+  "outputFiles": {
+    "./src/services/filmApi-discover.generated.ts": {
+      "filterEndpoints": ["getDiscoverMovie"]
+    },
+    "./src/services/filmApi-search.generated.ts": {
+      "filterEndpoints": ["getSearchMovie"]
+    },
+    "./src/services/filmApi-genre.generated.ts": {
+      "filterEndpoints": ["getGenreMovieList"]
+    }
+  }
+}

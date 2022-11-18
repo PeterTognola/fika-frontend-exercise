@@ -1,9 +1,10 @@
-import { render } from "@testing-library/react-native";
-import SearchBar from "../SearchBar";
+import { render } from '@testing-library/react-native';
+import SearchBar from '../SearchBar';
 
 it('functions as a search bar', () => {
-    const out = render(<SearchBar />);
+  // eslint-disable-next-line react/react-in-jsx-scope
+  const out = render(<SearchBar />);
 
-    // User can enter query.
-    // Query returned matches query.
+  // User can enter query.
+  // Query returned matches query.
 });
