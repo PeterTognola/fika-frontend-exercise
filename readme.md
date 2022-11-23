@@ -1,3 +1,7 @@
+# Comments
+
+
+
 # FikaSearch Exercise
 
 The objective of this exercise is to fork this repository and create a `react-native` app called 'FikaSearch'. This app will comprise of a listing page of films and the names of their genres. The page should also allow the user to search the films by typing into a text field.
