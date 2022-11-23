@@ -7,8 +7,9 @@ There are many ways to structure the code. As this was a fairly simple applicati
 - Always can improve on the testing, I started to test first but started to run out of time.
 - Better error handling, debouncing and caching of data (as used redux, so should use the powerful tool as much as a I can). Started to touch on these items but I ran out of time.
 - Split out styling.
+- async/lazy load images and image caching.
 
-**Many more things...** Being realistic though, as we don't have unlimited time, my first focus would be to improve between the api and service layer mainly; then focus on fancy UI aspects. If I can get my error handling, caching, debouncing etc being smooth and responsive, the UI will start to feel much better anyway. Then I can work out cool animations.
+**Many more things...** Being realistic though, as we don't have unlimited time, my first focus would be to improve between the api and service layer mainly; then focus on fancy UI aspects. If I can get my error handling, caching, debouncing etc being smooth and responsive, the UI will start to feel much better anyway. Then I can work on cool animations :). A code base can always be improved, it is just prioritising it and what adds most value to the user and the business.
 
 ### Why Expo?
 I really like Expo to get off the ground quickly, as well as for testing and using their universal Apis. There are limitations, but the gap is very small as you can use native android/ios inside too now.
