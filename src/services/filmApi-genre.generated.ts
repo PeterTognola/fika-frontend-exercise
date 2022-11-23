@@ -14,13 +14,8 @@ const injectedRtkApi = api.injectEndpoints({
   overrideExisting: false,
 });
 export { injectedRtkApi as enhancedApi };
-export type GetGenreMovieListApiResponse = /** status 200  */ {
-  genres?: {
-    id?: number;
-    name?: string;
-  }[];
-};
+export type GetGenreMovieListApiResponse = unknown;
 export type GetGenreMovieListApiArg = {
-  language?: string;
+  language: string;
 };
 export const { useGetGenreMovieListQuery } = injectedRtkApi;

@@ -50,15 +50,10 @@ const injectedRtkApi = api.injectEndpoints({
   overrideExisting: false,
 });
 export { injectedRtkApi as enhancedApi };
-export type GetDiscoverMovieApiResponse = /** status 200  */ {
-  page?: number;
-  results?: MovieListResultObject[];
-  total_results?: number;
-  total_pages?: number;
-};
+export type GetDiscoverMovieApiResponse = unknown;
 export type GetDiscoverMovieApiArg = {
   /** Choose from one of the many available sort options. */
-  sortBy?:
+  sortBy:
     | ''
     | 'popularity.asc'
     | 'popularity.desc'
@@ -75,89 +70,72 @@ export type GetDiscoverMovieApiArg = {
     | 'vote_count.asc'
     | 'vote_count.desc';
   /** Used in conjunction with the certification filter, use this to specify a country with a valid certification. */
-  certificationCountry?: string;
+  certificationCountry: string;
   /** Filter results with a valid certification from the 'certification_country' field. */
-  certification?: string;
+  certification: string;
   /** Filter and only include movies that have a certification that is less than or equal to the specified value. */
-  'certification.lte'?: string;
+  'certification.lte': string;
   /** Filter and only include movies that have a certification that is greater than or equal to the specified value. */
-  'certification.gte'?: string;
+  'certification.gte': string;
   /** A filter and include or exclude adult movies. */
-  includeAdult?: boolean;
+  includeAdult: boolean;
   /** A filter to include or exclude videos. */
-  includeVideo?: boolean;
+  includeVideo: boolean;
   /** Specify a language to query translatable fields with. */
-  language?: string;
+  language: string;
   /** Specify the page of results to query. */
-  page?: number;
+  page: number;
   /** A filter to limit the results to a specific primary release year. */
-  primaryReleaseYear?: number;
+  primaryReleaseYear: number;
   /** Filter and only include movies that have a primary release date that is greater or equal to the specified value. */
-  'primary_release_date.gte'?: string;
+  'primary_release_date.gte': string;
   /** Filter and only include movies that have a primary release date that is less than or equal to the specified value. */
-  'primary_release_date.lte'?: string;
+  'primary_release_date.lte': string;
   /** Filter and only include movies that have a release date (looking at all release dates) that is greater or equal to the specified value. */
-  'release_date.gte'?: string;
+  'release_date.gte': string;
   /** Filter and only include movies that have a release date (looking at all release dates) that is less than or equal to the specified value. */
-  'release_date.lte'?: string;
+  'release_date.lte': string;
   /** Specify a comma (AND) or pipe (OR) separated value to filter release types by. These release types map to the same values found on the movie release date method. */
-  withReleaseType?: number;
+  withReleaseType: number;
   /** A filter to limit the results to a specific year (looking at all release dates). */
-  year?: number;
+  year: number;
   /** Filter and only include movies that have a vote count that is greater or equal to the specified value. */
-  'vote_count.gte'?: number;
+  'vote_count.gte': number;
   /** Filter and only include movies that have a vote count that is less than or equal to the specified value. */
-  'vote_count.lte'?: number;
+  'vote_count.lte': number;
   /** Filter and only include movies that have a rating that is greater or equal to the specified value. */
-  'vote_average.gte'?: number;
+  'vote_average.gte': number;
   /** Filter and only include movies that have a rating that is less than or equal to the specified value. */
-  'vote_average.lte'?: number;
+  'vote_average.lte': number;
   /** A comma separated list of person ID's. Only include movies that have one of the ID's added as an actor. */
-  withCast?: string;
+  withCast: string;
   /** A comma separated list of person ID's. Only include movies that have one of the ID's added as a crew member. */
-  withCrew?: string;
+  withCrew: string;
   /** A comma separated list of person ID's. Only include movies that have one of the ID's added as a either a actor or a crew member. */
-  withPeople?: string;
+  withPeople: string;
   /** A comma separated list of production company ID's. Only include movies that have one of the ID's added as a production company. */
-  withCompanies?: string;
+  withCompanies: string;
   /** Comma separated value of genre ids that you want to include in the results. */
-  withGenres?: string;
+  withGenres: string;
   /** Comma separated value of genre ids that you want to exclude from the results. */
-  withoutGenres?: string;
+  withoutGenres: string;
   /** A comma separated list of keyword ID's. Only includes movies that have one of the ID's added as a keyword. */
-  withKeywords?: string;
+  withKeywords: string;
   /** Exclude items with certain keywords. You can comma and pipe seperate these values to create an 'AND' or 'OR' logic. */
-  withoutKeywords?: string;
+  withoutKeywords: string;
   /** Filter and only include movies that have a runtime that is greater or equal to a value. */
-  'with_runtime.gte'?: number;
+  'with_runtime.gte': number;
   /** Filter and only include movies that have a runtime that is less than or equal to a value. */
-  'with_runtime.lte'?: number;
+  'with_runtime.lte': number;
   /** Specify an ISO 639-1 string to filter results by their original language value. */
-  withOriginalLanguage?: string;
+  withOriginalLanguage: string;
   /** A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region. */
-  withWatchProviders?: string;
+  withWatchProviders: string;
   /** An ISO 3166-1 code. Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region. */
-  watchRegion?: string;
+  watchRegion: string;
   /** In combination with `watch_region`, you can filter by monetization type. */
-  withWatchMonetizationTypes?: 'flatrate' | 'free' | 'ads' | 'rent' | 'buy';
+  withWatchMonetizationTypes: 'flatrate' | 'free' | 'ads' | 'rent' | 'buy';
   /** Filter the results to exclude the specific production companies you specify here. `AND` / `OR` filters are supported. */
-  withoutCompanies?: string;
-};
-export type ImagePath = object;
-export type MovieListResultObject = {
-  poster_path?: ImagePath;
-  adult?: boolean;
-  overview?: string;
-  release_date?: string;
-  genre_ids?: number[];
-  id?: number;
-  original_title?: string;
-  original_language?: string;
-  title?: string;
-  backdrop_path?: ImagePath;
-  popularity?: number;
-  vote_count?: number;
-  video?: boolean;
-  vote_average?: number;
+  withoutCompanies: string;
 };
 export const { useGetDiscoverMovieQuery } = injectedRtkApi;

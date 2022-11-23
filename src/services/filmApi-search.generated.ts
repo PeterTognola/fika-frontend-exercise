@@ -17,31 +17,9 @@ const injectedRtkApi = api.injectEndpoints({
   overrideExisting: false,
 });
 export { injectedRtkApi as enhancedApi };
-export type GetSearchMovieApiResponse = /** status 200  */ {
-  page?: number;
-  results?: MovieListResultObject[];
-  total_results?: number;
-  total_pages?: number;
-};
+export type GetSearchMovieApiResponse = unknown;
 export type GetSearchMovieApiArg = {
-  year?: number;
-  primaryReleaseYear?: number;
-};
-export type ImagePath = object;
-export type MovieListResultObject = {
-  poster_path?: ImagePath;
-  adult?: boolean;
-  overview?: string;
-  release_date?: string;
-  genre_ids?: number[];
-  id?: number;
-  original_title?: string;
-  original_language?: string;
-  title?: string;
-  backdrop_path?: ImagePath;
-  popularity?: number;
-  vote_count?: number;
-  video?: boolean;
-  vote_average?: number;
+  year: number;
+  primaryReleaseYear: number;
 };
 export const { useGetSearchMovieQuery } = injectedRtkApi;

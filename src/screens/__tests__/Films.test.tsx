@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import SearchBar from '../../components/SearchBar';
 import { Films } from '../Films';
 import FilmItem from '../../components/FilmItem';
 
@@ -16,11 +15,7 @@ it('renders film items', () => {
   const out = render(<Films navigation={{ push }} />);
 
   // todo list is displaying film items.
-  filmItems.map(x => expect(out.getByText(x).parent).toBeInstanceOf(FilmItem));
-  expect(out.getByPlaceholderText('Search films...')).toBeInstanceOf(SearchBar);
-});
-
-it('renders film search', () => {
-  // User can search for films.
-  // Films displayed
+  filmItems.map(x =>
+    expect(out.getByText(x).parent?.parent).toBeInstanceOf(FilmItem),
+  );
 });
